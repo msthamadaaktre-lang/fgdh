@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telegram Mini App Ad</title>
+  
+  <!-- Telegram Web App SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f6f9;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    /* সুন্দর অ্যাড দেখার বাটন */
+    .ad-btn {
+      background-color: #0088cc;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 136, 204, 0.3);
+      transition: background-color 0.2s;
+    }
+
+    .ad-btn:active {
+      transform: scale(0.98);
+      background-color: #006699;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>অফার দেখতে নিচের বাটনে ক্লিক করুন</h2>
+    <!-- এড দেখার বাটন -->
+    <button id="openAdBtn" class="ad-btn">🎁 স্পেশাল অফার দেখুন</button>
+  </div>
+
+  <script>
+    // টেলিগ্রাম WebApp ইনিশিয়ালাইজ করা
+    if (window.Telegram && window.Telegram.WebApp) {
+      window.Telegram.WebApp.ready();
+      window.Telegram.WebApp.expand();
+    }
+
+    // বাটনে ক্লিক করলে Adsterra ডিরেক্ট লিংক ওপেন হবে
+    document.getElementById('openAdBtn').addEventListener('click', function() {
+      var adUrl = "https://www.profitableratecpmnetwork.com/tp74c0fyny?key=68ecb76d8b671b266153de4b8c530861";
+
+      if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.openLink) {
+        window.Telegram.WebApp.openLink(adUrl);
+      } else {
+        window.open(adUrl, '_blank');
+      }
+    });
+  </script>
+
+</body>
+</html>
